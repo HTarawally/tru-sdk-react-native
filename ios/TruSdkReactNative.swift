@@ -1,8 +1,10 @@
+
+
 @objc(TruSdkReactNative)
 class TruSdkReactNative: NSObject {
 
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
+    @objc(openCheckUrl:withB:withResolver:withRejecter:)
+    func openCheckUrl(url: string, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
+        resolve(url)
     }
 }

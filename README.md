@@ -15,7 +15,7 @@ import TruSdkReactNative from "tru-sdk-react-native";
 
 // ...
 
-const result = await TruSdkReactNative.multiply(3, 7);
+const result = await TruSdkReactNative.openCheckUrl(checkUrl);
 ```
 
 ## Contributing

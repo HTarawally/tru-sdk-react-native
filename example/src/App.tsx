@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import TruSdkReactNative from 'tru-sdk-react-native';
+// import TruSdkReactNative from 'tru-sdk-react-native';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
-  React.useEffect(() => {
-    TruSdkReactNative.multiply(3, 7).then(setResult);
-  }, []);
+  // React.useEffect(() => {
+  //   TruSdkReactNative.multiply(3, 7).then(setResult);
+  // }, []);
 
   return (
     <View style={styles.container}>
