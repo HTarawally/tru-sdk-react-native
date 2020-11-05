@@ -10,7 +10,6 @@ import id.tru.sdk.TruSDK
 class TruSdkReactNativeModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
     init {
-      super(reactContext)
       TruSDK.initializeSdk(reactContext)
     }
 
