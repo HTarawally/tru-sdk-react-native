@@ -12,7 +12,7 @@ import TruSdkReactNative from 'tru-sdk-react-native';
 import axios from 'axios';
 
 const client = axios.create({
-  baseURL: 'https://3b6d5abbe836.ngrok.io',
+  baseURL: 'https://40cfce57f637.ngrok.io/rta/0/phone_check',
   timeout: 30000,
 });
 

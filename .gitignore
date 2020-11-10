@@ -8,6 +8,9 @@
 # VSCode
 .vscode/
 jsconfig.json
+.classpath
+.project
+.settings
 
 # Xcode
 #
