@@ -25,6 +25,8 @@ const result = await TruSdkReactNative.openCheckUrl(checkUrl);
 - For metro bundler, require node version > 10
 - `cd example` && `yarn ios` or `yarn android`
 
+Note: For Android, make sure to have `ANDROID_HOME` env var set (ie `export ANDROID_HOME=~/Library/Android/sdk`)
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.

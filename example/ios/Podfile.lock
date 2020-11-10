@@ -292,10 +292,10 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
+  - tru-sdk-ios (0.0.3)
   - tru-sdk-react-native (0.1.0):
     - React
-    - Trusdk (~> 0.0.1)
-  - Trusdk (0.0.1)
+    - tru-sdk-ios (~> 0.0.3)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -333,7 +333,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/callinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - tru-sdk-react-native (from `../../tru-sdk-react-native.podspec`)
+  - tru-sdk-react-native (from `../..`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -349,7 +349,7 @@ SPEC REPOS:
     - Flipper-RSocket
     - FlipperKit
     - OpenSSL-Universal
-    - Trusdk
+    - tru-sdk-ios
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -402,7 +402,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
   tru-sdk-react-native:
-    :path: "../../tru-sdk-react-native.podspec"
+    :path: "../.."
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -442,11 +442,11 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  tru-sdk-react-native: e2f831e3f26d2822262dae0c089cc1e8e4babe18
-  Trusdk: b4ac4f504aae71e0b4e7892a777516e2e4857a09
+  tru-sdk-ios: e0cbf826cc6f7b934e8d7dc83fbfe28c93ef26a0
+  tru-sdk-react-native: fa39a0f3c24e8d0cec32ecaa9a4a22fb479c6666
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: f19cf39944e04d5d88ee894e64f7dc47bc60a936
+PODFILE CHECKSUM: 0679c45099cea674c6e48403c6eedde41a1766db
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0
