@@ -24,11 +24,14 @@ const result = await TruSdkReactNative.openCheckUrl(checkUrl);
 ## Run example
 
 - For iOS: Require XCode >12
-- For android: Require JDK 14 (Java version 14.02 / Gradle v6.3)
+- For Android:
+    - Require JDK 14 (Java version 14.02 / Gradle v6.3).
+    - Android Studio or Android SDK manager via [Android developer downloads](https://developer.android.com/studio).
+    - Set `ANDROID_HOME` environment variable (ie `export ANDROID_HOME=~/Library/Android/sdk`). Although `$ANDROID_HOME` is apparently deprecated it is still required.
+    - Accepted the SDK licenses `$ANDROID_HOME/tools/bin/sdkmanager --licenses` or `$ANDROID_SDK_ROOT/tools/bin/sdkmanager --licenses`
 - For metro bundler, require node version > 10
 - `cd example` && `yarn install` then `yarn ios` or `yarn android`
 
-Note: For Android, make sure to have `ANDROID_HOME` env var set (ie `export ANDROID_HOME=~/Library/Android/sdk`)
 
 ## Contributing
 
