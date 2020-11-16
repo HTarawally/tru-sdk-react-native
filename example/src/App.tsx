@@ -9,9 +9,9 @@ import {
   Button,
 } from 'react-native';
 import TruSdkReactNative from 'tru-sdk-react-native';
-import axios from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
-const client = axios.create({
+const client: AxiosInstance = axios.create({
   baseURL: 'https://40cfce57f637.ngrok.io/rta/0/phone_check',
   timeout: 30000,
 });
@@ -29,17 +29,31 @@ export default function App() {
     Alert.alert('All good', 'Check successful', [{ text: 'OK' }], {
       cancelable: false,
     });
+  
+  const showRequestError = (errorPrefix: string, error: any) => {
+    let msg = JSON.stringify(error)
+    if(error.response) {
+      msg = JSON.stringify(error.response)
+    }
+    setIsLoading(false);
+    showError(`${errorPrefix}: ${msg}`);
+  }
 
   const triggerPhoneCheck = async () => {
     setIsLoading(true);
-    try {
-      const postCheckNumberRes = await client({
-        method: 'post',
-        url: '/check',
-        data: { phone_number: phoneNumber },
-      });
-      console.log('[POST CHECK]:', postCheckNumberRes.data);
 
+    let postCheckNumberRes: AxiosResponse;
+    try {
+      postCheckNumberRes = await client.post('/check', { phone_number: phoneNumber });
+      console.log('[POST CHECK]:', postCheckNumberRes.data);
+    }
+    catch(error) {
+      setIsLoading(false);
+      showRequestError('Error creating check resource', error);
+      return
+    }
+
+    try {
       await TruSdkReactNative.openCheckUrl(postCheckNumberRes.data.check_url);
       const checkStatusRes = await client({
         method: 'get',
@@ -49,9 +63,9 @@ export default function App() {
 
       setIsLoading(false);
       showSuccess();
-    } catch (err) {
-      setIsLoading(false);
-      showError(JSON.stringify(err));
+    } catch (error) {
+      showRequestError('Error retrieving check URL', error)
+      return
     }
   };
 
